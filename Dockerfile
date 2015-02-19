@@ -10,6 +10,9 @@ RUN opkg-install nginx
 RUN mkdir /var/lib/nginx
 ADD nginx.conf /etc/nginx/nginx.conf
 
-VOLUME ["/website_data"]
+ADD start.sh /start.sh
+ADD index.html /index.html
+
+VOLUME ["/website_files"]
 EXPOSE 80
-CMD ["/usr/sbin/nginx"]
+CMD ["sh", "/start.sh"]
