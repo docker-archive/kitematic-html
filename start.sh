@@ -6,6 +6,6 @@ then
 else
   echo "$file not found."
   echo "Moving default index.html..."
-  mv /index.html /website_files/index.html
+  cp /index.html /website_files/index.html
 fi
 /usr/sbin/nginx
